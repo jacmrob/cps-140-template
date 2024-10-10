@@ -55,19 +55,23 @@ p {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  border-radius: 15px;
 }
 
 #item1 {
   padding: 1rem;
   background-color:antiquewhite;
+  border-radius: 15px;
 }
 #item2 {
   padding: 1rem;
   background-color:#ebcece;
+  border-radius: 15px;
 }
 #item3 {
   padding: 1rem;
   background-color: rgb(200, 109, 109);
+  border-radius: 15px;
 }
 
 #FlexboxImage {
