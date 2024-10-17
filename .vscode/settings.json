@@ -1,0 +1,11 @@
+{
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "editor.formatOnSave": true,
+    "prettier.documentSelectors": [
+        "*.html, *.css"
+    ],
+    "prettier.htmlWhitespaceSensitivity": "strict",
+    "prettier.vueIndentScriptAndStyle": true
+}
