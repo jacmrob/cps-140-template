@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Other page</title>
+  <title>About Me</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width" />
   <link rel="stylesheet" href="styles.css" />
@@ -19,13 +19,43 @@
       </button>
       <div class="dropdown-content">
         <a href="/" aria-current="page">Home</a>
-        <a href="/page2.html">Other page</a>
+        <a href="/page2.html">About Me</a>
       </div>
     </div>
 
   </nav>
   <main>
-    <h1>My other page</h1>
+    <h1>About me</h1>
+    I've traveled the world and sampled some of the best resteraunts in the most famous cities. Trust my taste -- it's
+    good.
+
+    <h1>Contact me</h1>
+    <form class="form">
+      <label>
+        Name: <input type="text" required />
+      </label>
+      <label>
+        Email: <input type="email" required />
+      </label>
+
+      <label>
+        Message: <textarea style="width:80%"></textarea>
+      </label>
+      <label>
+        Opt in to emails <input type="checkbox" />
+      </label>
+      <select size=3>
+        <option>A</option>
+        <option>B</option>
+        <option>C</option>
+      </select>
+      <input type="submit" style="width:20%" onclick="formSubmission()" />
+    </form>
+    <script>
+      function formSubmission() {
+        alert("The form was successfully submitted!");
+      }
+    </script>
   </main>
 </body>
 

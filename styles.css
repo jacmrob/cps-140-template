@@ -94,3 +94,16 @@ p {
   display: flex;
   justify-content: flex-end;
 }
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+label { 
+  float: left; 
+  clear: left;
+  display: block;  
+}
