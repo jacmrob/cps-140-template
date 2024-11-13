@@ -5,37 +5,54 @@
 body {
   margin: 0;
   font-family: system-ui, sans-serif;
-  color: #FFFFFF;
+  color: rgb(230, 220, 220);
   background-color: #000000;
 }
 
 nav {
   display: flex;
   flex-wrap: wrap;
-  align-items: flex-start;
-  justify-content: flex-start;
+  align-items: center;
+  justify-content: space-between;
   padding: 1rem;
   gap: 1rem;
-  border-bottom: solid 1px #aaa;
-  background-color: #ebcece;
+  background-color: rgb(60 72 68);
 }
 
-nav a {
-  /* display: inline-block; */
-  min-width: 9rem;
-  margin-top: 1rem;
-  padding: 1rem;
-  border-radius: 0.2rem;
-  border: solid 1px #aaa;
-  text-align: center;
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  right: 0px;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
   text-decoration: none;
-  color: #555;
+  display: block;
 }
 
-nav a[aria-current='page'] {
-  color: #000;
-  background-color: #915d5d;
-}
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
 
 main {
   padding: 1rem;
@@ -51,32 +68,42 @@ p {
   word-spacing: 0.25rem;
 }
 
-.HomepageGrid {
+.Locations {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  border-radius: 15px;
-  color: #3b3838;
+  overflow-x: auto;
+  align-content: center;
 }
 
-#item1 {
-  padding: 1rem;
-  background-color:antiquewhite;
-  border-radius: 15px;
-}
-#item2 {
-  padding: 1rem;
-  background-color:#ebcece;
-  border-radius: 15px;
-}
-#item3 {
-  padding: 1rem;
-  background-color: rgb(200, 109, 109);
-  border-radius: 15px;
+.LocationBox {
+  font-size: 2rem;
+  padding: 5rem;
+  border: 2px solid #04AA6D;
+  margin:1rem;
+  /* min-width: 200px; */
 }
 
-#FlexboxImage {
-  display: flex;
+.FoodPic {
+  display:flex;
   justify-content: center;
-  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.Footer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+label { 
+  float: left; 
+  clear: left;
+  display: block;  
 }

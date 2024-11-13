@@ -1,19 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Other page</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="stylesheet" href="styles.css" />
-    <script type="module" src="script.js"></script>
-  </head>
-  <body>
-    <nav>
-      <a href="/">Home</a>
-      <a href="/page2.html" aria-current="page">Other page</a>
-    </nav>
-    <main>
-      <h1>My other page</h1>
-    </main>
-  </body>
+
+<head>
+  <title>About Me</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <link rel="stylesheet" href="styles.css" />
+  <script type="module" src="script.js"></script>
+  <script src="https://kit.fontawesome.com/c6bad75a75.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <nav>
+    <h1>Roberti Reviews</h1>
+    <div class="dropdown">
+      <button class="dropdown-button">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="/" aria-current="page">Home</a>
+        <a href="/page2.html">About Me</a>
+      </div>
+    </div>
+
+  </nav>
+  <main>
+    <h1>About me</h1>
+    I've traveled the world and sampled some of the best resteraunts in the most famous cities. Trust my taste -- it's
+    good.
+
+    <h1>Contact me</h1>
+    <form class="form">
+      <label>
+        Name: <input type="text" id="formName" required />
+      </label>
+      <label>
+        Email: <input type="email" required />
+      </label>
+
+      <label>
+        Message: <textarea style="width:80%" rows=3></textarea>
+      </label>
+      <label>
+        Opt in to emails <input type="checkbox" checked />
+      </label>
+      <button style="width:20%" id="submitButton" onclick="formSubmission()">
+        The Button
+      </button>
+    </form>
+    <script>
+      function formSubmission() {
+        history.back()
+
+        // alert(`You clicked ${document.getElementById("submitButton").textContent}`);
+
+        // const name = document.getElementById("formName").value
+        // const part1 = `Thanks for submitting, ${name}!`
+        // const part2 = "We got your message, loud and clear."
+        // alert(part1 + part2)
+      }
+    </script>
+  </main>
+</body>
+
 </html>
