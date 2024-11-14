@@ -11,8 +11,8 @@
 </head>
 
 <body>
-  <nav>
-    <h1>Roberti Reviews</h1>
+  <nav id="nav">
+    <h1 id="navHeader">Roberti Reviews</h1>
     <div class="dropdown">
       <button class="dropdown-button">
         <i class="fa-solid fa-bars"></i>
@@ -30,6 +30,7 @@
     good.
 
     <h1>Contact me</h1>
+
     <form class="form">
       <label>
         Name: <input type="text" id="formName" required />
@@ -50,14 +51,10 @@
     </form>
     <script>
       function formSubmission() {
-        history.back()
-
-        // alert(`You clicked ${document.getElementById("submitButton").textContent}`);
-
-        // const name = document.getElementById("formName").value
-        // const part1 = `Thanks for submitting, ${name}!`
-        // const part2 = "We got your message, loud and clear."
-        // alert(part1 + part2)
+        const name = document.getElementById("formName").value
+        const part1 = `Thanks for submitting, ${name}!`
+        const part2 = "We got your message, loud and clear."
+        alert(part1 + part2)
       }
     </script>
   </main>
