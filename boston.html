@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Boston</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="script.js"></script>
+    <script src="https://kit.fontawesome.com/c6bad75a75.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <nav>
+        <h1 id="navHeader">Roberti Reviews</h1>
+        <div class="dropdown">
+            <button class="dropdown-button">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="/" aria-current="page">Home</a>
+                <a href="/page2.html">About me</a>
+            </div>
+        </div>
+
+    </nav>
+
+    <div class="bostonReviews">
+        <div> Select a type of cuisine: <select name="foodTypes" id="types" onchange="makeTable()"></select></div>
+
+        <script>
+            const foodTypes = ["all", "Chinese", "Italian", "Indian"];
+            const select = document.getElementById("types");
+            foodTypes.forEach((type) => {
+                option = document.createElement("option");
+                option.value = type;
+                option.text = type;
+                select.appendChild(option);
+            })
+        </script>
+        </select>
+
+        <div id="myTable"></div>
+
+        <table id="table">
+            <thead>
+                <tr>
+                    <td><b>Name</b></td>
+                    <td><b>Stars</b></td>
+                </tr>
+            </thead>
+            <tbody></tbody>
+
+        </table>
+    </div>
+
+    <script>
+        const restaurants = [{
+            name: "Dumpling House",
+            type: "Chinese",
+            stars: 5,
+        }, {
+            name: "Giulia",
+            type: "Italian",
+            stars: 5,
+        }, {
+            name: "Pini's Pizza",
+            type: "Italian",
+            stars: 3
+        }
+        ];
+
+        const writeTableRow = (table, restaurant) => {
+            const newRow = table.insertRow();
+
+            newRow.innerHTML = `<tr id=${restaurant.name}>
+                    <td>${restaurant.name}</td>
+                    <td>${restaurant.stars}</td>
+                </tr>`;
+        }
+
+        const makeTable = () => {
+            const tableBody = document.getElementsByTagName("tbody")[0];
+            console.log(tableBody);
+            tableBody.innerHTML = "";
+            if (select.value == "all") {
+                restaurants.forEach((r) => writeTableRow(tableBody, r))
+            } else {
+                restaurants.filter((r) => r.type == select.value).forEach((r) => {
+                    writeTableRow(tableBody, r);
+                });
+            }
+        }
+
+        makeTable();
+
+    </script>
+
+</body>
+
+</html>
