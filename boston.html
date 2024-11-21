@@ -25,7 +25,9 @@
     </nav>
 
     <div class="bostonReviews">
-        <div> Select a type of cuisine: <select name="foodTypes" id="types" onchange="makeTable()"></select></div>
+        <div> Select a type of cuisine:
+            <select id="types" onchange="makeTable()"></select>
+        </div>
 
         <script>
             const foodTypes = ["all", "Chinese", "Italian", "Indian"];
@@ -37,19 +39,16 @@
                 select.appendChild(option);
             })
         </script>
-        </select>
-
-        <div id="myTable"></div>
 
         <table id="table">
             <thead>
                 <tr>
                     <td><b>Name</b></td>
+                    <td><b>Food</b></td>
                     <td><b>Stars</b></td>
                 </tr>
             </thead>
             <tbody></tbody>
-
         </table>
     </div>
 
@@ -68,20 +67,21 @@
             stars: 3
         }
         ];
+        console.log(restaurants);
 
         const writeTableRow = (table, restaurant) => {
             const newRow = table.insertRow();
 
             newRow.innerHTML = `<tr id=${restaurant.name}>
                     <td>${restaurant.name}</td>
+                    <td>${restaurant.type}</td>
                     <td>${restaurant.stars}</td>
                 </tr>`;
         }
 
         const makeTable = () => {
             const tableBody = document.getElementsByTagName("tbody")[0];
-            console.log(tableBody);
-            tableBody.innerHTML = "";
+            tableBody.innerHTML = "";  // reset table
             if (select.value == "all") {
                 restaurants.forEach((r) => writeTableRow(tableBody, r))
             } else {
